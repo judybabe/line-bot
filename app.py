@@ -38,10 +38,21 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    s = '寶貝愛我嗎'
+    s = '蛤～'
+
+    if msg == '嗨':
+        s = '嗨簡貝貝'
+    elif msg == '愛妳':
+        s = '我也愛你'
+    elif msg == '吃飯了嗎':
+        s = '你要吃什麼':
+    elif msg == '寶貝':
+        s = '怎麼了寶貝'
+    elif s == '對不起':
+        s = '沒關係，肉肉給我咬'
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=s))
+        TextSendMessage(text=r))
 
 
 if __name__ == "__main__":
