@@ -97,7 +97,7 @@ def handle_message(event):
     elif msg in ['我想你', '我好想你']:
         r = 'me2 快來找我'
     elif msg in ['寶貝早安']:
-        r = '早餐要吃什麼':
+        r = '早餐要吃什麼'
     elif msg in ['早餐要吃什麼']:
         r = '我先問的你先說辣'
     elif msg in ['哈哈哈哈']:
