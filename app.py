@@ -40,21 +40,10 @@ def handle_message(event):
     msg = event.message.text
     r = '蛤～'
 
-    if msg == '嗨' or 'Hi':
-        r = '嗨簡貝貝'
-    elif msg == '愛妳':
-        r = '我也愛你'
-    elif msg == '吃飯了嗎':
-        r = '你要吃什麼':
-    elif msg == '寶貝':
-        r = '怎麼了寶貝'
-    elif msg == '對不起':
-        r = '沒關係，肉肉給我咬'
-    elif msg == '軟爛':
-        r = '你才爛勒'
-    elif msg == '貼圖已傳送':
-        r = '笑我沒貼圖？？？'
-
+    if msg in ['Hi', 'hi', '嗨', '你好']:
+        r = '嗨！簡貝貝'
+    elif msg in ['Love you', '愛你', '愛泥', '愛尼', '愛妳']:
+        r = '偶也愛你辣'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
