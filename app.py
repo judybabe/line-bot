@@ -102,6 +102,16 @@ def handle_message(event):
         r = '我先問的你先說辣'
     elif msg in ['哈哈哈哈']:
         r = '沒那麼好笑吧'
+    elif msg in ['寶貝想睡了嗎']:
+        sticker_message = StickerSendMessage(
+            package_id='1',
+            sticker_id='1'
+        )
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
