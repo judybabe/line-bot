@@ -47,20 +47,20 @@ def handle_message(event):
         )
 
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
 
         return
 
-    if msg in ['Hi', 'hi', '嗨', '你好']:
+    if msg in ['Hi', 'hi', '嗨', '你好']:                                      # rule-based
         r = '嗨！簡貝貝'
-    elif msg in ['Love you', '愛你', '愛泥', '愛尼', '愛妳', '愛你辣']:
+    elif msg in ['Love you', '愛你', '愛泥', '愛尼', '愛妳', '愛你辣']:           # NLP natural language processing
         r = '偶也愛你辣'
     elif msg in ['吃了嗎', '吃飯了嗎', '餓嗎', '寶貝餓了嗎', '寶貝要吃什麼']:
         r = '餓扁了幫我外送'
     elif msg in ['飲料', '要喝飲料嗎', '好想喝飲料', '好渴']:
         r = '奶綠加小芋圓'
-    elif msg in ['早餐', '早餐要吃什麼', 'breakfast']:
+    elif msg in ['早餐', 'breakfast']:
         r = '麵線大辣油像菜沙茶多'
     elif msg in ['午餐', '午餐要吃什麼', 'lunch']:
         r = '鍋媽'
@@ -92,6 +92,16 @@ def handle_message(event):
         r = '來咩！！！！'
     elif msg in ['我難過', '我好難過', '我心情不好']:
         r = '寶貝鼻要難過有我在'
+    elif msg in ['吵架', '來吵架啊', '來吵架']:
+        r = '你很狗屎'
+    elif msg in ['我想你', '我好想你']:
+        r = 'me2 快來找我'
+    elif msg in ['寶貝早安']:
+        r = '早餐要吃什麼':
+    elif msg in ['早餐要吃什麼']:
+        r = '我先問的你先說辣'
+    elif msg in ['哈哈哈哈']:
+        r = '沒那麼好笑吧'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=r))
