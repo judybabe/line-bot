@@ -40,7 +40,7 @@ def handle_message(event):
     msg = event.message.text
     s = '蛤～'
 
-    if msg == '嗨':
+    if msg == '嗨' or 'Hi':
         s = '嗨簡貝貝'
     elif msg == '愛妳':
         s = '我也愛你'
@@ -48,11 +48,15 @@ def handle_message(event):
         s = '你要吃什麼':
     elif msg == '寶貝':
         s = '怎麼了寶貝'
-    elif s == '對不起':
+    elif msg == '對不起':
         s = '沒關係，肉肉給我咬'
+    elif msg == '軟爛':
+        s = '你才爛勒'
+    elif msg == '貼圖已傳送':
+        s = '笑我沒貼圖？？？'
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r))
+        TextSendMessage(text=s))
 
 
 if __name__ == "__main__":
